@@ -1,0 +1,1 @@
+(()=>{"use strict";var e;e=document.querySelector(".mobile-menu"),console.log("test",e)})();
