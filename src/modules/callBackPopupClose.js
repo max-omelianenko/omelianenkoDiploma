@@ -9,7 +9,7 @@ const callBackPopupClose = () => {
         modalOverlay.style.display = 'none';
     };
 
-    modalCallback.addEventListener('click', (event) =>{
+    modalCallback.addEventListener('click', (event) => {
         let target = event.target;
 
         if(target.hasAttribute('Alt')){
@@ -17,7 +17,7 @@ const callBackPopupClose = () => {
         }
     });
     
-    modalOverlay.addEventListener('click', () =>{
+    modalOverlay.addEventListener('click', () => {
         modalClose();
     });
     
