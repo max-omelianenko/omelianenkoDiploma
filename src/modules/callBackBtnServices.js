@@ -1,6 +1,6 @@
 const callBackBtnServices = () => {
 
-    const callbackBtn = document.querySelectorAll('.button-services'),
+    const callbackBtn = document.querySelector('.button-services'),
         modalCallback = document.querySelector('.modal-callback'),
         modalOverlay = document.querySelector('.modal-overlay');
 
@@ -14,12 +14,10 @@ const callBackBtnServices = () => {
         }, speed / 1000);
     };
 
-    callbackBtn.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            fadeIn(modalCallback, 50);
-            modalCallback.style.display = 'block';
-            modalOverlay.style.display = 'block';
-        });
+    callbackBtn.addEventListener('click', () => {
+        fadeIn(modalCallback, 50);
+        modalCallback.style.display = 'block';
+        modalOverlay.style.display = 'block';
     });
 };
 
