@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_callBackPopupOpen__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/callBackPopupOpen */ \"./src/modules/callBackPopupOpen.js\");\n/* harmony import */ var _modules_callBackPopupClose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/callBackPopupClose */ \"./src/modules/callBackPopupClose.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n\n\n\n\n\n(0,_modules_callBackPopupOpen__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_callBackPopupClose__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://OmelianenkoDiploma/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_mainSlider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mainSlider */ \"./src/modules/mainSlider.js\");\n/* harmony import */ var _modules_callBackPopupOpen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/callBackPopupOpen */ \"./src/modules/callBackPopupOpen.js\");\n/* harmony import */ var _modules_callBackPopupClose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/callBackPopupClose */ \"./src/modules/callBackPopupClose.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n\n\n\n\n\n\n(0,_modules_mainSlider__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_callBackPopupOpen__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_callBackPopupClose__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://OmelianenkoDiploma/./src/index.js?");
 
 /***/ }),
 
@@ -61,6 +61,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar callBackPopupOpen = function callBackPopupOpen() {\n  var callbackBtn = document.querySelectorAll('.callback-btn'),\n      modalCallback = document.querySelector('.modal-callback'),\n      modalOverlay = document.querySelector('.modal-overlay');\n\n  var fadeIn = function fadeIn(el, speed) {\n    var step = 1 / speed;\n    var interval = setInterval(function () {\n      if (el.style.opacity >= 1) {\n        clearInterval(interval);\n      }\n\n      el.style.opacity = +el.style.opacity + step;\n    }, speed / 1000);\n  };\n\n  callbackBtn.forEach(function (elem) {\n    elem.addEventListener('click', function () {\n      fadeIn(modalCallback, 50);\n      modalCallback.style.display = 'block';\n      modalOverlay.style.display = 'block';\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callBackPopupOpen);\n\n//# sourceURL=webpack://OmelianenkoDiploma/./src/modules/callBackPopupOpen.js?");
+
+/***/ }),
+
+/***/ "./src/modules/mainSlider.js":
+/*!***********************************!*\
+  !*** ./src/modules/mainSlider.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar mainSlider = function mainSlider() {\n  var slide = document.querySelectorAll('.item'),\n      slider = document.querySelector('.top-slider');\n  var sliderContent = [];\n  var currentSlide = 0,\n      interval;\n\n  var prevSlide = function prevSlide(elem, index, strClass) {\n    elem[index].classList.remove(strClass);\n  };\n\n  var nextSlide = function nextSlide(elem, index, strClass) {\n    elem[index].classList.add(strClass);\n  };\n\n  var autoPlaySlide = function autoPlaySlide() {\n    prevSlide(slide, currentSlide, 'item');\n    prevSlide(sliderContent, currentSlide, 'active');\n    currentSlide++;\n\n    if (currentSlide >= slide.length) {\n      currentSlide = 0;\n    }\n\n    nextSlide(slide, currentSlide, 'item');\n    nextSlide(sliderContent, currentSlide, 'active');\n  };\n\n  var startSlide = function startSlide() {\n    var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3000;\n    interval = setInterval(autoPlaySlide, time);\n  };\n\n  var stopSlide = function stopSlide() {\n    clearInterval(interval);\n  };\n\n  slide.forEach(function (elem, index) {\n    sliderContent[index] = elem.querySelector('.table');\n  });\n  sliderContent[0].classList.add('active');\n  sliderContent.forEach(function (elem) {\n    elem.style.position = 'absolute';\n  });\n  slider.addEventListener('mouseover', function (event) {\n    if (event.target.matches('.item')) {\n      stopSlide();\n    }\n  });\n  slider.addEventListener('mouseout', function (event) {\n    if (event.target.matches('.item')) {\n      startSlide();\n    }\n  });\n  startSlide();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mainSlider);\n\n//# sourceURL=webpack://OmelianenkoDiploma/./src/modules/mainSlider.js?");
 
 /***/ }),
 
@@ -473,7 +484,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5bcbde63ab0a8b481721")
+/******/ 		__webpack_require__.h = () => ("05fce99753c9f92497c0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
