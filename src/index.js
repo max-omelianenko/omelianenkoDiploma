@@ -1,7 +1,9 @@
 'use strict';
 
-import callBackPopup from './modules/callBackPopup';
+import callBackPopupOpen from './modules/callBackPopupOpen';
+import callBackPopupClose from './modules/callBackPopupClose';
 import smoothScroll from './modules/smoothScroll';
 
-callBackPopup();
+callBackPopupOpen();
+callBackPopupClose();
 smoothScroll();
