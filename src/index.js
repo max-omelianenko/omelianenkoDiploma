@@ -4,6 +4,7 @@ import mainSlider from './modules/mainSlider';
 import carousel from './modules/carousel';
 import accordeon from './modules/accordeon';
 import up from './modules/up';
+import sendForm from './modules/sendForm';
 import callBackPopupOpen from './modules/callBackPopupOpen';
 import callBackPopupClose from './modules/callBackPopupClose';
 import smoothScroll from './modules/smoothScroll';
@@ -19,6 +20,7 @@ callBackPopupClose();
 smoothScroll();
 accordeon();
 up();
+sendForm();
 
 callBackPopupOpen(callbackBtnServ);
 callBackPopupOpen(callbackBtn[1]);

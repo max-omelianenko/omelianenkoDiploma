@@ -1,7 +1,5 @@
 const up = () => {
     
-    const accordeon = document.querySelector('.accordeon');
-
     document.addEventListener('DOMContentLoaded', () => {
 
         let toTopBtn = document.querySelector('.up');
