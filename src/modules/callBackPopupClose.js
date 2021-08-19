@@ -20,19 +20,6 @@ const callBackPopupClose = () => {
     modalOverlay.addEventListener('click', () => {
         modalClose();
     });
-    
-    // modalCallback.addEventListener('click', (event) =>{
-    //     let target = event.target;
-
-    //     if(target.hasAttribute('Alt')){
-    //         modalClose();
-    //     } else {
-    //         target = target.closest('.modal-callback');
-    //         if(!target){
-    //             modalClose();
-    //         }
-    //     }
-    // });
 };
 
 export default callBackPopupClose;

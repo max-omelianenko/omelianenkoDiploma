@@ -1,7 +1,6 @@
-const callBackPopupOpen = () => {
+const callBackPopupOpen = (elem) => {
 
-    const callbackBtn = document.querySelectorAll('.callback-btn'),
-        modalCallback = document.querySelector('.modal-callback'),
+    const modalCallback = document.querySelector('.modal-callback'),
         modalOverlay = document.querySelector('.modal-overlay');
 
     const fadeIn = (el, speed) => {
@@ -14,12 +13,10 @@ const callBackPopupOpen = () => {
         }, speed / 1000);
     };
 
-    callbackBtn.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            fadeIn(modalCallback, 50);
-            modalCallback.style.display = 'block';
-            modalOverlay.style.display = 'block';
-        });
+    elem.addEventListener('click', () => {
+        fadeIn(modalCallback, 50);
+        modalCallback.style.display = 'block';
+        modalOverlay.style.display = 'block';
     });
 };
 
