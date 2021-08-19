@@ -2,6 +2,7 @@
 
 import mainSlider from './modules/mainSlider';
 import carousel from './modules/carousel';
+import accordeon from './modules/accordeon';
 import callBackPopupOpen from './modules/callBackPopupOpen';
 import callBackPopupClose from './modules/callBackPopupClose';
 import smoothScroll from './modules/smoothScroll';
@@ -15,6 +16,7 @@ mainSlider();
 carousel();
 callBackPopupClose();
 smoothScroll();
+accordeon();
 
 callBackPopupOpen(callbackBtnServ);
 callBackPopupOpen(callbackBtn[1]);
