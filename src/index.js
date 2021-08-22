@@ -1,8 +1,9 @@
 'use strict';
 
 import mainSlider from './modules/mainSlider';
-import carousel from './modules/carousel';
+//import carousel from './modules/carousel';
 import accordeon from './modules/accordeon';
+import carouselAnother from './modules/carouselAnother';
 import up from './modules/up';
 import sendForm from './modules/sendForm';
 import callBackPopupOpen from './modules/callBackPopupOpen';
@@ -15,7 +16,8 @@ const callbackBtn = document.querySelectorAll('.callback-btn'),
     servicesItem = servicesCarousel.querySelectorAll('.element');
 
 mainSlider();
-carousel();
+//carousel();
+carouselAnother();
 callBackPopupClose();
 smoothScroll();
 accordeon();

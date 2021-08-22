@@ -2,8 +2,10 @@ const mainSlider = () => {
 
     const slide = document.querySelectorAll('.item'),
         slider = document.querySelector('.top-slider');
+        
     
-    const sliderContent = [];
+    const sliderContent = [],
+        sliderText = [];
 
     let currentSlide = 0, 
         interval;
@@ -16,9 +18,18 @@ const mainSlider = () => {
         elem[index].classList.add(strClass);
     };
 
+    const prevSlideContent = (elem, index) => {
+        elem[index].style.display = 'none';
+    };
+
+    const nextSlideContent = (elem, index) => {
+        elem[index].style.display = 'inline-block';
+    };
+
     const autoPlaySlide = () => {
         prevSlide(slide, currentSlide, 'item');
         prevSlide(sliderContent, currentSlide, 'active');
+        prevSlideContent(sliderText, currentSlide);
         
         currentSlide++;
         if (currentSlide >= slide.length){
@@ -26,6 +37,7 @@ const mainSlider = () => {
         }
         nextSlide(slide, currentSlide, 'item');
         nextSlide(sliderContent, currentSlide, 'active');
+        nextSlideContent(sliderText, currentSlide);
     };
 
     const startSlide = (time = 3000) => {
@@ -38,6 +50,7 @@ const mainSlider = () => {
 
     slide.forEach((elem, index) => {
         sliderContent[index] = elem.querySelector('.table');
+        sliderText[index] = elem.querySelector('.container');
     });
     sliderContent[0].classList.add('active');
 
@@ -56,7 +69,6 @@ const mainSlider = () => {
             startSlide();
         }
     });
-
     startSlide();
 };
 
